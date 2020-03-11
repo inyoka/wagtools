@@ -69,7 +69,7 @@ class Facebook(models.Model):
 
 
 @register_snippet
-class Links(models.Model):
+class SocialLinks(models.Model):
     text = models.CharField("Visible text (eg. Latest School Bulletin)", max_length=255, null=True, blank=True)  # eg. Decembers Bulletin
     link = models.CharField("Link to resource (eg tel:+62-061-661-6765)", max_length=255, null=True, blank=True)
     hover = models.CharField("Desc on hover (eg. December Bulletin)", max_length=255, null=True, blank=True)  # eg. Latest School Bulletin

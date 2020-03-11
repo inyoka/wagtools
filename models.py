@@ -29,7 +29,7 @@ from wagtail.contrib.forms.models import (
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.search import index
 
-from wagtools.social import Seo, Google, Facebook, Links
+from wagtools.social import Seo, Google, Facebook, SocialLinks
 from wagtools.blocks import CommonStreamBlock
 
 
