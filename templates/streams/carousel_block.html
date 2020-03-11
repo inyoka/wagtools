@@ -1,0 +1,40 @@
+{% load static %} {% load wagtailimages_tags %}
+
+<div class="carousel-embed shadow stream_item {{ stream.block_type }}">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        {% if carousel.slides|length > 1 %}
+        <ol class="carousel-indicators">
+            {% for carousel_item in carousel.slides %}
+            <li data-target="#carousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %} class="active" {% endif %}></li>
+            {% endfor %}
+        </ol>
+        {% endif %}
+
+        <div class="carousel-inner">
+            {% for slide in self.slides %}
+            <div class="carousel-item {% if forloop.first %} active {% endif %}">
+                {% image slide.background fill-1200x600 class="d-block img-fluid" alt="..." %} {% if slide.title or slide.caption %}
+                <div class="carousel-caption h-75 {{ slide.classes }}">
+                    <h1 class="display-4 mw-75 carousel-font {{ slide.classesTitle }}">{{ slide.title }}</h2>
+                        <p class="lead d-none d-sm-block {{ slide.classesCaption }}">{{ slide.caption }}</p class="carousel-caption h-75 d-none d-md-block">
+                        {% if slide.link %}
+                        <a href="{{ slide.link }}" class="btn btn-primary d-none d-md-block">{{ slide.button }}</a class="carousel-caption h-75 d-none d-md-block">
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+
+        </div>
+        {% if carousel.slides|length > 1 %}
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+                        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                        {% endif %}
+                </div>
+            </div>

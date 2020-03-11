@@ -1,0 +1,20 @@
+{% load static wagtailimages_tags %}
+
+<div class="card mx-auto my-3 text-center stream_item {{ self.block_type }}" style="max-width: 540px;">
+    <div class="row no-gutters {% if self.test_reversed %} flex-md-row-reverse {% else %} flex-md-row {% endif %}">
+      <div class="col-sm-4 mx-auto w-50 w-sm-100 d-flex align-content-center">
+        {% image self.test_pic fill-150x180 as photo %}
+        <img src="{{ photo.url }}" class="card-img" alt="{{ photo.alt }}">
+      </div>
+      <div class="col-sm-8 align-self-center">
+        <div class="card-body">
+            <div class="d-flex">
+                <span class="text-dark"><i class="fas fa-quote-left fa-2x"></i></span>
+                <p class="card-text">{{ self.test_quote }}</p>
+                <span class="align-self-end mb-2 text-dark"><i class="fas fa-quote-right fa-2x"></i></span>
+            </div>
+          <h5 class="card-title m-0 signature text-dark">{{ self.test_name }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>

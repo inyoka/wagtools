@@ -1,0 +1,11 @@
+{% load wagtailimages_tags %}
+
+<div class="card mb-3">
+{% image self.image fill-300x200 as img %}
+  <img src="{{ img.url }}" class="card-img-top" alt="{{ img.alt }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ self.title }}</h5>
+    <p class="card-text">{{ self.text }}</p>
+    {% comment %} <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> {% endcomment %}
+  </div>
+</div>

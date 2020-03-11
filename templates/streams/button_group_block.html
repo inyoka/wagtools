@@ -1,0 +1,13 @@
+{% load static %}
+{% if self.title %}
+<h1 class='text-center'>{{ self.title }}</h1>
+{% endif %}
+<div class="btn-group d-flex justify-content-around" role="group" aria-label="Button group">
+    {% for button in self.buttons %}
+        {% if button.link %}
+            <a href="{{ button.link }}" class="btn {{ button.classes }} rounded-0">{{ button.text }}</a>
+        {% else %}
+            <a href="{{ button.pagelink }}" class="btn {{ button.classes }} rounded-0">{{ button.text }}</a>
+        {% endif %}
+    {% endfor %}
+</div>

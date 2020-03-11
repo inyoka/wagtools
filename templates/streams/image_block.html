@@ -1,0 +1,2 @@
+{% load wagtailimages_tags %} {% image self fill-1200x800 as photo %}
+<img src='{{photo.url}}' class="img-fluid w-100" alt="{{ image.alt}}">
