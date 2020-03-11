@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static i18n wagtailcore_tags wagtailimages_tags wagtailembeds_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+{% endblock extra_css %}
+
+{% block content %}
+
+        {% for stream in page.my_stream %}
+            {% include_block stream %}
+        {% endfor %}
+
+        {% block form %}
+            {% include 'contact/form.html' %}
+        {% endblock %}
+
+{% endblock content %}

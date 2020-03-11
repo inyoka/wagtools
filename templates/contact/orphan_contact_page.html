@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load static i18n wagtailcore_tags wagtailimages_tags wagtailembeds_tags %}
+
+{% block extra_css %}
+
+<link href="https://fonts.googleapis.com/css?family=Caveat+Brush&display=swap" rel="stylesheet">
+
+{% endblock extra_css %}
+
+{% block content %}
+
+        {% block nav %}
+
+        {% endblock %}
+
+        {% for block in page.my_stream %}
+            {% include 'home/_stream.html' %}
+        {% endfor %}
+
+        {% block form %}
+            {% include 'home/_form.html' %}
+        {% endblock %}
+
+{% endblock content %}
+
+
+{% block footer %}
+<footer class="mb-5"></footer>
+{% endblock footer %}
