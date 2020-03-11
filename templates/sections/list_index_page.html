@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block body_class %}template-blogindexpage{% endblock %}
+
+{% block content %}
+
+    {% for stream in page.my_stream %}
+        {% include_block stream %}
+    {% endfor %}
+
+<div class="d-flex flex-column list-group px-5 my-3">
+    {% for post in blogpages %}
+        {% with post=post.specific %}
+
+        <a href="{{ post.url }}" class="list-group-item list-group-item-action flex-column">
+            <div class="text-center">
+            <h5 class="mb-1">{{ post.title }}</h5>
+            <p class="mb-1">{{ post.body|richtext }}</p>
+        </div>
+        </a>
+
+        {% endwith %}
+    {% endfor %}
+</div>
+
+
+{% endblock %}

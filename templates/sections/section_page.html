@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-blogpage{% endblock %}
+
+{% block content %}
+
+    {% for stream in page.my_stream %}
+        {% include_block stream %}
+    {% endfor %}
+
+{% endblock %}
