@@ -1,3 +1,14 @@
+div.rich-text p {
+  text-align: justify;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 div.col-md-6 h2 {
   text-align: center;
 }
