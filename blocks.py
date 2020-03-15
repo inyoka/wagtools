@@ -17,6 +17,27 @@ from wagtail.core.blocks.field_block import PageChooserBlock
 
 from wagtailcodeblock.blocks import CodeBlock
 
+
+class ColumnBlock(StreamBlock):
+    heading = CharBlock(classname="full title")
+    paragraph = RichTextBlock()
+    image = ImageChooserBlock()
+
+    class Meta:
+        template = 'streams/column_block.html'
+
+
+class ColumnTwoBlock(StructBlock):
+
+    left_column = ColumnBlock(icon='arrow-right', label='Left column content')
+    right_column = ColumnBlock(icon='arrow-right', label='Right column content')
+
+    class Meta:
+        template = 'streams/column_two_block.html'
+        icon = 'placeholder'
+        label = 'Two Columns'
+
+
 class ContentStreamBlock(StreamBlock):
     heading = TextBlock()
     paragraph = TextBlock()
@@ -166,6 +187,7 @@ class CommonStreamBlock(StreamBlock):
     button = ButtonBlock()
     buttongroup = ButtonGroupBlock()
     testimonial = TestimonialBlock()
+    columns = ColumnTwoBlock()
 
     class Meta:
         icon = 'cogs'

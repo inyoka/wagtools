@@ -1,0 +1,19 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% if self %}
+
+    {% for block in self %}
+        {% if block.block_type == 'heading' %}
+            <h2>{{ block.value }}</h2>
+        {% elif block.block_type == 'paragraph' %}
+            <p>{{ block.value }}</p>
+        {% elif block.block_type == 'image' %}
+            {% image block.value width-900 as photo %}
+            <img src='{{photo.url}}' class="img-fluid w-100" alt="{{ photo.alt}}">
+        {% else %}
+            <h1>error</h1>
+            <p>{{ block.block_type }}</p>
+        {% endif %}
+    {% endfor %}
+
+{% endif %}
