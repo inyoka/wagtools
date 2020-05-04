@@ -3,6 +3,13 @@
   padding-bottom: 20px;
 }
 
+div.rich-text {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 div.rich-text p {
   text-align: justify;
   display: -webkit-box;
