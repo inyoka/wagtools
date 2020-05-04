@@ -5,6 +5,6 @@
         <div class="container text-center mw-75">
             <h1 class="display-4 jumbotron-font mw-75 {{ self.classesHeading }}">{{ self.heading }}</h1>
             {% if self.text %}<p class="lead {{ self.classesText }}">{{ self.text }}</p>{% endif %}
-            {% if self.buttonUrl and self.buttonLabel %}<p class="lead"><a class="btn btn-primary btn-lg" href="{{ page.buttonUrl }}" role="button">{{ self.buttonLabel }}</a></p>{% endif %}
+            {% if self.buttonUrl and self.buttonLabel %}<p class="lead"><a class="btn btn-primary btn-lg" href="{{ self.buttonUrl }}" role="button">{{ self.buttonLabel }}</a></p>{% endif %}
         </div>
     </div>
