@@ -1,7 +1,7 @@
 from django.db import models
 
 from modelcluster.fields import ParentalKey
-from wagtail.core.models import Page
+from wagtail.core.models import Page, Orderable
 from wagtail.admin.edit_handlers import (
     FieldPanel,
     FieldRowPanel,
@@ -9,6 +9,10 @@ from wagtail.admin.edit_handlers import (
     MultiFieldPanel,
     StreamFieldPanel
 )
+from wagtail.images.edit_handlers import (
+    ImageChooserPanel
+)
+
 from wagtail.core.fields import (
     RichTextField, 
     StreamField
@@ -79,8 +83,14 @@ class SectionPage(Page, Seo):
         context = super(SectionPage, self).get_context(request)
         context['menuitems'] = request.site.root_page.get_descendants(
             inclusive=True).live().in_menu()
-
         return context
+    
+    def main_image(self):
+        gallery_item = self.gallery_images.first()
+        if gallery_item:
+            return gallery_item.image
+        else:
+            return None
 
     search_fields = Page.search_fields + [
         index.SearchField('body'),
@@ -90,6 +100,19 @@ class SectionPage(Page, Seo):
     content_panels = Page.content_panels + [
         FieldPanel('body', classname="full"),
         StreamFieldPanel('my_stream'),
+        InlinePanel('gallery_images', label="Gallery images"),
+    ]
+
+class SectionGalleryImage(Orderable):
+    page = ParentalKey(SectionPage, on_delete=models.CASCADE, related_name='gallery_images')
+    image = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.CASCADE, related_name='+',
+    )
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        ImageChooserPanel('image'),
+        FieldPanel('caption'),
     ]
 
 class FormField(AbstractFormField):
