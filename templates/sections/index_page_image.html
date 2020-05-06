@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block body_class %}template-blogindexpage{% endblock %}
+
+{% block content %}
+
+    {% for stream in page.my_stream %}
+        {% include_block stream %}
+    {% endfor %}
+
+
+    <div class="row">
+
+      {% for post in blogpages %}
+      {% with post=post.specific %}
+  
+      <div class="col-4">
+        <div style="float: left; margin: 10px">
+            {% image post.main_image fill-320x240 %}
+            <p>{{ post.caption }}</p>
+        </div>
+      </div>
+      <div class="col-8">
+        <h3>{{ post.title }}</h3>
+        <p class="card-text">{{ post.body|richtext }}</p>
+        <a href="{{ post.url }}" class="btn btn-primary ml-auto">Open</a>
+      </div>
+  
+      {% endwith %}
+      {% endfor %}
+
+
+    </div>
+
+{% endblock %}

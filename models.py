@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
+
 
 from modelcluster.fields import ParentalKey
 from wagtail.core.models import Page, Orderable
@@ -38,14 +40,23 @@ from wagtools.blocks import CommonStreamBlock
 
 
 class SectionIndexPage(Page, Seo):
-    alt_template = models.BooleanField(verbose_name="Use list style Index page instead?")
+    alt_template = models.IntegerField(
+        verbose_name="Index-page style? 1) List 2) Card 3) Card & Image",
+        default=1,
+        validators=[MaxValueValidator(3), MinValueValidator(1)]
+        )
+
     my_stream = StreamField(CommonStreamBlock(), null=True, blank=True)
 
     def get_template(self, request):
-        if self.alt_template:
+        if self.alt_template == 1:
+            return 'sections/index_page_list.html'
+        elif self.alt_template == 2:
+            return 'sections/index_page_cards.html'
+        elif self.alt_template == 3:
+            return 'sections/index_page_image.html'
+        else :
             return 'sections/list_index_page.html'
-
-        return 'sections/section_index_page.html'
 
     def get_context(self, request):
         # Update context to include only published posts, ordered by reverse-chron
