@@ -72,6 +72,9 @@ class SectionPage(Page, Seo):
 
     parent_page_types = ['wagtools.SectionIndexPage']
 
+    def get_template(self, request):
+        return 'sections/section_page.html'
+
     def get_context(self, request):
         context = super(SectionPage, self).get_context(request)
         context['menuitems'] = request.site.root_page.get_descendants(
