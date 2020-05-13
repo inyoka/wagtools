@@ -21,7 +21,53 @@ div.rich-text p {
           flex-direction: column;
 }
 
+div.rich-text div.img {
+  max-height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 div.col-md-6 h2 {
   text-align: center;
+}
+
+.shadow-dark {
+  text-shadow: 0.02em 0.02em black;
+}
+
+.shadow-light {
+  text-shadow: 0.02em 0.02em white;
+}
+
+* {
+  background-color: rgba(255, 0, 255, 0.1);
+}
+
+* * {
+  background-color: rgba(255, 0, 255, 0.1);
+}
+
+* * * {
+  background-color: rgba(255, 0, 255, 0.1);
+}
+
+* * * * {
+  background-color: rgba(255, 0, 255, 0.1);
+}
+
+* * * * * {
+  background-color: rgba(255, 0, 255, 0.1);
+}
+
+* * * * * * {
+  background-color: rgba(255, 0, 255, 0.1);
+}
+
+* * * * * * * {
+  background-color: rgba(255, 0, 255, 0.1);
 }
 /*# sourceMappingURL=wagtools.css.map */
