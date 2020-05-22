@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load static i18n wagtailcore_tags wagtailimages_tags wagtailembeds_tags profile_tags %}
+
+{% block extra_css %}
+
+{% endblock extra_css %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block content %}
+
+    {% for stream in page.my_stream %}
+        {% include_block stream %}
+    {% endfor %}
+
+{% endblock content %}
