@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags %}
+{% load static i18n wagtailcore_tags wagtailimages_tags wagtailembeds_tags profile_tags %}
+
+{% block extra_css %}
+
+{% endblock extra_css %}
 
 {% block body_class %}template-blogpage{% endblock %}
 
@@ -10,4 +14,4 @@
         {% include_block stream %}
     {% endfor %}
 
-{% endblock %}
+{% endblock content %}
