@@ -14,21 +14,23 @@
     {% endfor %}
 
 
-    <div class="row">
+    <div class="row col-12">
 
       {% for post in blogpages %}
       {% with post=post.specific %}
   
-      <div class="col-4">
-        <div style="float: left; margin: 10px">
-            {% image post.main_image fill-320x240 %}
+      <div class="col-6">
+        <div style="margin: 10px">
+          {% image post.main_image original as photo %}
+          <!-- alt use to force aspect ratio : fill-1200x800 -->
+          <img src='{{photo.url}}' class="img-fluid w-100" alt="{{ photo.alt}}">
             <p>{{ post.caption }}</p>
         </div>
       </div>
-      <div class="col-8">
+      <div class="col-6">
         <h3>{{ post.title }}</h3>
         <p class="card-text">{{ post.body|richtext }}</p>
-        <a href="{{ post.url }}" class="btn btn-primary ml-auto">Open</a>
+        <span class="w-100 mx-auto text-center center-block"><a class="w-100 btn btn-primary mt-2" href="{{ post.url }}">Open</a></span>          
       </div>
   
       {% endwith %}
