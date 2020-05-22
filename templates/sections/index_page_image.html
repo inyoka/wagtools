@@ -3,7 +3,8 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block extra_css %}
-{% endblock %}
+
+{% endblock extra_css %}
 
 {% block body_class %}template-blogindexpage{% endblock %}
 
@@ -14,18 +15,16 @@
     {% endfor %}
 
 
-    <div class="row col-12">
+    <row class="row col-12">
 
       {% for post in blogpages %}
       {% with post=post.specific %}
   
       <div class="col-6">
-        <div style="margin: 10px">
           {% image post.main_image original as photo %}
           <!-- alt use to force aspect ratio : fill-1200x800 -->
           <img src='{{photo.url}}' class="img-fluid w-100" alt="{{ photo.alt}}">
             <p>{{ post.caption }}</p>
-        </div>
       </div>
       <div class="col-6">
         <h3>{{ post.title }}</h3>
@@ -37,6 +36,6 @@
       {% endfor %}
 
 
-    </div>
+    </row>
 
 {% endblock %}
