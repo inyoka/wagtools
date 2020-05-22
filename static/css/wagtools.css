@@ -1,9 +1,9 @@
-.row {
-  padding-top: 20px;
-  padding-bottom: 20px;
+main {
+  min-height: 600px;
 }
 
 div.rich-text {
+  padding: 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -35,39 +35,32 @@ h1, h2, h3, h4, h5 {
   text-align: center;
 }
 
+div.col-md-6 {
+  padding: 0;
+}
+
+.stream_item {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0rem;
+  padding-bottom: 2rem;
+}
+
+.hero {
+  padding-top: 2rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+.bg-main {
+  background-color: palevioletred;
+}
+
 .shadow-dark {
   text-shadow: 0.02em 0.02em black;
 }
 
 .shadow-light {
   text-shadow: 0.02em 0.02em white;
-}
-
-* {
-  background-color: rgba(255, 0, 255, 0.1);
-}
-
-* * {
-  background-color: rgba(255, 0, 255, 0.1);
-}
-
-* * * {
-  background-color: rgba(255, 0, 255, 0.1);
-}
-
-* * * * {
-  background-color: rgba(255, 0, 255, 0.1);
-}
-
-* * * * * {
-  background-color: rgba(255, 0, 255, 0.1);
-}
-
-* * * * * * {
-  background-color: rgba(255, 0, 255, 0.1);
-}
-
-* * * * * * * {
-  background-color: rgba(255, 0, 255, 0.1);
 }
 /*# sourceMappingURL=wagtools.css.map */
