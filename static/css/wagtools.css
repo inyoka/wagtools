@@ -1,5 +1,5 @@
 main {
-  min-height: 600px;
+  min-height: 400px;
 }
 
 div.rich-text {
@@ -42,14 +42,20 @@ div.col-md-6 {
 .stream_item {
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-top: 0rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-.hero {
-  padding-top: 2rem;
-  padding-left: 0rem;
-  padding-right: 0rem;
+/* Main Level */
+ol, ul {
+  text-align: left;
+  padding-left: 20%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+img {
+  border-radius: 0.5rem;
 }
 
 .shadow-dark {
@@ -58,5 +64,15 @@ div.col-md-6 {
 
 .shadow-light {
   text-shadow: 0.02em 0.02em white;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .stream_item {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
 /*# sourceMappingURL=wagtools.css.map */
