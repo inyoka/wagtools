@@ -66,6 +66,16 @@ img {
   text-shadow: 0.02em 0.02em white;
 }
 
+@media screen and (max-width: 600px) {
+  h1, h2, h3, h4, h5, h6, .display-4 {
+    font-size: 2em;
+  }
+  .navbar {
+    padding: 0%;
+    margin: 0%;
+  }
+}
+
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .stream_item {
