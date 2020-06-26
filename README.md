@@ -2,8 +2,6 @@
 Drop-in app providing streamfields, social links field, contact form, and sections.
 
 
-
-
 Essentially an amalgamation of several existing projects such as :
 
 - [Wagtail-Streams-App: Drop in Stream field app.] (https://github.com/chandra-kumala-school/Wagtail-Streams-App)
