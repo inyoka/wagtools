@@ -79,6 +79,7 @@ class SectionIndexPage(Page, Seo):
         FieldPanel('alt_template'),
         StreamFieldPanel('my_stream')
     ]
+    promote_panels = Page.promote_panels + Seo.panels
 
 
 class SectionPage(Page, Seo):
@@ -113,6 +114,7 @@ class SectionPage(Page, Seo):
         StreamFieldPanel('my_stream'),
         InlinePanel('gallery_images', label="Gallery images"),
     ]
+    promote_panels = Page.promote_panels + Seo.panels
 
 class SectionGalleryImage(Orderable):
     page = ParentalKey(SectionPage, on_delete=models.CASCADE, related_name='gallery_images')
