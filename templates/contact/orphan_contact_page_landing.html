@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags %}
+
+{% block content %}
+
+        {% for stream in page.thank_you %}
+            {% include_block stream %}
+        {% endfor %}
+
+{% endblock %}

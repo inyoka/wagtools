@@ -6,29 +6,28 @@
 
 <form action="{% pageurl page %}" method="POST">
     {% csrf_token %}
+    
 
     {% for field in form.visible_fields %}
-    <div class="form-group mb-10">
-        {{ field.errors }}
-        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-
-        {% if field.field.widget.input_type %}
-
-        <input type="{% if field.field.widget.input_type == 'number' %}
-                      tel
-                 {% else %}
-                      {{ field.field.widget.input_type }}
-                 {% endif %}" class="form-control" name="{{ field.name }}" id="{{ field.id_for_label }}"
-            placeholder="{{ field.help_text }}" {% if field.field.required %}required="required" {% endif %}>
-
-        {% else %}
-
-        <textarea type="{{ field.field.widget.input_type }}" class="form-control" name="{{ field.name }}"
-            id="{{ field.id_for_label }}" placeholder="{{ field.help_text|safe  }}"
-            {% if field.field.required %}required="required" {% endif %}></textarea>
-
-        {% endif %}
-    </div>
+    {{ field.errors }}
+        <div class="form-group mx-4 mb-10 d-flex flex-column">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            
+            {% if field.field.widget.input_type == 'number' %}
+                <input type="tel" class="form-control" name="{{ field.name }}" id="{{ field.id_for_label }}" placeholder="{{ field.help_text }}" {% if field.field.required %}required="required" {% endif %}>
+            
+            {% elif field.field.widget.input_type >= '' %}
+                <div class="flex-row">
+                    {% for item in field %}
+                        <span class="m-2">{{ item }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <span class="">
+                    <textarea type="{{ field.field.widget.input_type }}" class="form-control" name="{{ field.name }}"id="{{ field.id_for_label }}" placeholder="{{ field.help_text|safe  }}" {% if field.field.required %}required="required" {% endif %}></textarea>
+                </span>
+            {% endif %}
+        </div>
     {% endfor %}
     <div class="d-flex w-100 justify-content-center">
         <button type="submit" class="btn {{ self.button_css }}"><i class="{{ self.fa_left}}"></i>

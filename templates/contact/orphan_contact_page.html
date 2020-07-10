@@ -4,8 +4,6 @@
 
 {% block extra_css %}
 
-<link href="https://fonts.googleapis.com/css?family=Caveat+Brush&display=swap" rel="stylesheet">
-
 {% endblock extra_css %}
 
 {% block content %}
@@ -14,12 +12,12 @@
 
         {% endblock %}
 
-        {% for block in page.my_stream %}
-            {% include 'home/_stream.html' %}
+        {% for stream in page.my_stream %}
+            {% include_block stream %}
         {% endfor %}
 
         {% block form %}
-            {% include 'home/_form.html' %}
+            {% include 'contact/form.html' %}
         {% endblock %}
 
 {% endblock content %}
