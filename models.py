@@ -160,8 +160,10 @@ class ContactPage(AbstractEmailForm, Seo):
         StreamFieldPanel('my_stream'),
         InlinePanel('form_fields', label='Form Fields'),
         MultiFieldPanel([
-            FieldPanel('button_css'),
-            FieldPanel('button_text'),
+            FieldRowPanel([
+                FieldPanel('button_text', classname='col4'),
+                FieldPanel('button_css', classname='col8'),
+            ]),
         ], heading='Button Settings'),
         StreamFieldPanel('thank_you'),
         MultiFieldPanel([
