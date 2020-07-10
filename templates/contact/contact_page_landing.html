@@ -4,8 +4,12 @@
 
 {% block content %}
 
-        {% for stream in page.thank_you %}
-            {% include_block stream %}
-        {% endfor %}
+    {% block nav %}
+        {% include 'partials/_nav.html' %}
+    {% endblock %}
+
+    {% for stream in page.thank_you %}
+        {% include_block stream %}
+    {% endfor %}
 
 {% endblock %}
