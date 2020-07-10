@@ -16,6 +16,10 @@
             {% if field.field.widget.input_type == 'number' %}
                 <input type="tel" class="form-control" name="{{ field.name }}" id="{{ field.id_for_label }}" placeholder="{{ field.help_text }}" {% if field.field.required %}required="required" {% endif %}>
             
+            {% elif field.field.widget.input_type >= 'text' %}
+                <input type="text" class="form-control" name="{{ field.name }}" id="{{ field.id_for_label }}" placeholder="{{ field.help_text }}" {% if field.field.required %}required="required" {% endif %}>
+
+
             {% elif field.field.widget.input_type >= '' %}
                 <div class="flex-row">
                     {% for item in field %}
