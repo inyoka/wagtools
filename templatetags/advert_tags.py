@@ -1,6 +1,6 @@
 from django import template
-from wagtools.social import Google
-from wagtools.social import Facebook
+from wagtools.snippet import Google
+from wagtools.snippet import Facebook
 
 register = template.Library()
 

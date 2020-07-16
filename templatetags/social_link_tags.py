@@ -1,5 +1,5 @@
 from django import template
-from wagtools.social import SocialLinks
+from wagtools.snippet import SocialLinks
 
 register = template.Library()
 
