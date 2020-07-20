@@ -3,7 +3,6 @@ main {
 }
 
 div.rich-text {
-  padding: 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -12,6 +11,7 @@ div.rich-text {
 
 div.rich-text p {
   text-align: justify;
+  padding-bottom: 1em;
 }
 
 div.rich-text div.img {
@@ -28,15 +28,16 @@ h1, h2, h3, h4, h5 {
   text-align: center;
 }
 
+h2, h3, h4, h5 {
+  padding-bottom: 1em;
+}
+
 div.col-md-6 {
   padding: 0;
 }
 
 .stream_item {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 0em;
 }
 
 /* Main Level */
