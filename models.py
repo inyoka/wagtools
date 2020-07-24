@@ -39,6 +39,27 @@ from wagtools.snippet import Seo, Google, Facebook, SocialLinks
 from wagtools.blocks import CommonStreamBlock
 
 
+class HomePage(Page, Seo):
+    my_stream = StreamField(CommonStreamBlock(required=False), null=True, blank=True)
+
+    def get_context(self, request):
+        context = super(HomePage, self).get_context(request)
+        context['menuitems'] = request.site.root_page.get_descendants(
+            inclusive=True).live().in_menu()
+        return context
+
+    search_fields = Page.search_fields + [
+        index.SearchField('my_stream'),
+    ]
+
+    content_panels = Page.content_panels + [
+        StreamFieldPanel('my_stream', "Main content..."),
+    ]
+    promote_panels = Page.promote_panels + Seo.panels
+
+    template = 'home/home_page.html'
+
+
 class SectionIndexPage(Page, Seo):
     alt_template = models.IntegerField(
         verbose_name="Index-page style? 1) List 2) Card 3) Card & Image",
