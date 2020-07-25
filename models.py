@@ -34,7 +34,11 @@ from wagtail.contrib.forms.models import (
     AbstractEmailForm,
     AbstractFormField
 )
-from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
+from wagtail.admin.edit_handlers import (
+    FieldPanel, 
+    StreamFieldPanel
+)
+
 from wagtail.search import index
 
 from wagtools.snippet import Seo, Google, Facebook, SocialLinks
