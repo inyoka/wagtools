@@ -6,9 +6,11 @@
 
 {% endblock extra_css %}
 
-{% block body_class %}template-homepage{% endblock %}
-
 {% block content %}
+
+    {% block nav %}
+        {% include 'partials/_nav.html' %}
+    {% endblock %}
 
     {% for stream in page.my_stream %}
         {% include_block stream %}
