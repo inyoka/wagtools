@@ -1,8 +1,8 @@
 {% load static %}
 {% if self.title %}
-<h1 class='text-center'>{{ self.title }}</h1>
+<h1 class='stream-item text-center'>{{ self.title }}</h1>
 {% endif %}
-<div class="btn-group d-flex justify-content-around" role="group" aria-label="Button group">
+<div class="stream-item btn-group d-flex justify-content-around" role="group" aria-label="Button group">
     {% for button in self.buttons %}
         {% if button.link %}
             <a href="{{ button.link }}" class="btn {{ button.classes }} rounded-0">{{ button.text }}</a>
