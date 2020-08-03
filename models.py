@@ -45,7 +45,7 @@ from wagtools.snippet import Seo, Google, Facebook, SocialLinks
 from wagtools.blocks import CommonStreamBlock
 
 
-class HomePage(Page, Seo):
+class DefaultHomePage(Page, Seo):
     my_stream = StreamField(CommonStreamBlock(required=False), null=True, blank=True)
 
     def get_context(self, request):
