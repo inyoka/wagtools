@@ -1,27 +1,51 @@
+.container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.stream-item {
+  padding: 0em;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  max-width: 100%;
+}
+
+.stream-item p {
+  text-align: justify;
+}
+
+.stream-item h1, .stream-item h2, .stream-item h3, .stream-item h4, .stream-item h5, .stream-item .jumbotron {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.bg-lightgreen {
+  background-color: #2BBBAD;
+}
+
+.bg-green {
+  background-color: #00695c;
+}
+
+.bg-lightblue {
+  background-color: #2BBBAD;
+}
+
+.bg-blue {
+  background-color: #00695c;
+}
+
+.bg-lightpurple {
+  background-color: #2BBBAD;
+}
+
+.bg-purple {
+  background-color: #00695c;
+}
+
 main {
   min-height: 400px;
-}
-
-div.rich-text {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-div.rich-text p {
-  text-align: justify;
-  padding-bottom: 1em;
-}
-
-div.rich-text div.img {
-  max-height: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 h1, h2, h3, h4, h5 {
@@ -34,10 +58,6 @@ h2, h3, h4, h5 {
 
 div.col-md-6 {
   padding: 0;
-}
-
-.stream_item {
-  padding: 0em;
 }
 
 /* Main Level */
@@ -62,21 +82,7 @@ img {
 
 @media screen and (max-width: 600px) {
   h1, h2, h3, h4, h5, h6, .display-4 {
-    font-size: 2em;
-  }
-  .navbar {
-    padding: 0%;
-    margin: 0%;
-  }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  .stream_item {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    font-size: 2rem;
   }
 }
 /*# sourceMappingURL=wagtools.css.map */
