@@ -1,3 +1,5 @@
 {% load wagtailimages_tags %} 
 {% image self fill-1200x800 as photo %}
-<img src='{{photo.url}}' class="stream-item img-fluid w-100" alt="{{ photo.alt}}">
+<div class="stream-item">
+    <img src='{{photo.url}}' class="img-fluid w-100" alt="{{ photo.alt}}">
+</div>
