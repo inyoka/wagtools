@@ -1,7 +1,9 @@
 {% load static %}
 
-{% if self.link %}
-<a href="stream-item {{ self.link }}" class="btn {{ self.classes }} rounded-0">{{ self.text }}</a>
-{% else %}
-<a href="stream-item {{ self.pagelink }}" class="btn {{ self.classes }} rounded-0">{{ self.text }}</a>
-{% endif %}
+<div class='stream-item {{ self.block_type }}'>
+    {% if self.link %}
+    <a href="{{ self.link }}" class="btn {{ self.classes }} rounded-0">{{ self.text }}</a>
+    {% else %}
+    <a href="{{ self.pagelink }}" class="btn {{ self.classes }} rounded-0">{{ self.text }}</a>
+    {% endif %}
+</div>
