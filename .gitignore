@@ -139,3 +139,4 @@ templates/streams/notes.html
 *.scss
 nohup.out
 notes/*
+.vscode/settings.json
