@@ -5,7 +5,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 from modelcluster.fields import ParentalKey
-from wagtail.core.models import Page, Orderable
+from wagtail.core.models import Page, Orderable, Site
 from wagtail.admin.edit_handlers import (
     FieldPanel,
     FieldRowPanel,
@@ -50,7 +50,7 @@ class DefaultHomePage(Page, Seo):
 
     def get_context(self, request):
         context = super(HomePage, self).get_context(request)
-        context['menuitems'] = request.site.root_page.get_descendants(
+        context['menuitems'] = Site.find_for_request(request).root_page.get_descendants(
             inclusive=True).live().in_menu()
         return context
 
@@ -94,7 +94,7 @@ class SectionIndexPage(Page, Seo):
         else : 
             blogpages = self.get_children().live().order_by('-first_published_at')
             context['blogpages'] = blogpages
-        context['menuitems'] = request.site.root_page.get_descendants(
+        context['menuitems'] = Site.find_for_request(request).root_page.get_descendants(
             inclusive=True).live().in_menu()
         return context
 
@@ -120,7 +120,7 @@ class SectionPage(Page, Seo):
 
     def get_context(self, request):
         context = super(SectionPage, self).get_context(request)
-        context['menuitems'] = request.site.root_page.get_descendants(
+        context['menuitems'] = Site.find_for_request(request).root_page.get_descendants(
             inclusive=True).live().in_menu()
         return context
     
@@ -180,7 +180,7 @@ class ContactPage(AbstractEmailForm, Seo):
     template = 'contact/contact_page.html'
     def get_context(self, request):
         context = super(ContactPage, self).get_context(request)
-        context['menuitems'] = request.site.root_page.get_descendants(inclusive=True).live().in_menu()
+        context['menuitems'] = Site.find_for_request(request).root_page.get_descendants(inclusive=True).live().in_menu()
         return context
 
     content_panels = AbstractEmailForm.content_panels + [
