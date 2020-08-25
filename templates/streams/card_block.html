@@ -1,6 +1,6 @@
 {% load wagtailimages_tags %}
 
-<div class="stream-item card mb-3">
+<div class="stream-item card">
 {% image self.image fill-300x200 as img %}
   <img src="{{ img.url }}" class="card-img-top" alt="{{ img.alt }}">
   <div class="card-body">
