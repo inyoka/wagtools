@@ -100,7 +100,7 @@ class ButtonGroupBlock(StructBlock):
         label = 'Button group'
 
 
-class RichTextBlock(RichTextBlock):
+class RichtextBlock(RichTextBlock):
     class Meta:
         template = 'streams/richtext_block.html'
         icon = 'doc-full'
@@ -173,13 +173,11 @@ class HeroBlock(StructBlock):
 class CommonStreamBlock(StreamBlock):
     # Simple Blocks
     title = CharBlock(classname="full title", blank=True, max_length=200, icon='title', template='streams/title_block.html')
-    videoembed = EmbedBlock("Video embed (YouTube and Facebook)", label='Enter Video URL',  max_length=500, icon='media', null=True, blank=True, template='streams/video_embed_block.html')
     image = ImageChooserBlock("Choose an image ...", label='Choose an image ...', icon='image', template='streams/image_block.html')
     googlemap = CharBlock("Google Calendar URL", label='Enter Google Map URL', icon='site', max_length=500, null=True, blank=True, template='streams/google_map_block.html')
     googlecal = CharBlock("Google Calendar URL", label='Enter Google Calendar URL', max_length=500, icon='date', null=True, blank=True, template='streams/google_cal_block.html')
     # Complex Blocks
     code = ContentStreamBlock()
-    hero = HeroBlock()
     richtext = RichTextBlock()
     card = CardBlock()
     cards = CardGroupBlock()

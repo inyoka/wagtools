@@ -138,3 +138,4 @@ templates/streams/notes.html
 *.map
 *.scss
 nohup.out
+notes/*
