@@ -28,7 +28,6 @@ class ColumnBlock(StreamBlock):
 
 
 class ColumnTwoBlock(StructBlock):
-
     left_column = ColumnBlock(icon='arrow-right', label='Left column content')
     right_column = ColumnBlock(icon='arrow-right', label='Right column content')
 
@@ -80,7 +79,8 @@ class CardGroupBlock(StructBlock):
 
 class ButtonBlock(StructBlock):
     text = CharBlock(blank=True)
-    classes = CharBlock(blank=True)
+    classes = CharBlock(label="CSS from Bootstrap (btn-success btn-danger)", blank=True)
+
     link = URLBlock(required=False, label="external URL", blank=True)
     pagelink = PageChooserBlock(required=False, label="internal URL", blank=True)
 
@@ -171,21 +171,22 @@ class HeroBlock(StructBlock):
 
 
 class CommonStreamBlock(StreamBlock):
-    # Simple Blocks
+    hero = HeroBlock()
     title = CharBlock(classname="full title", blank=True, max_length=200, icon='title', template='streams/title_block.html')
+    richtext = RichtextBlock()
+    columns = ColumnTwoBlock()
     image = ImageChooserBlock("Choose an image ...", label='Choose an image ...', icon='image', template='streams/image_block.html')
+    videoembed = EmbedBlock("Video embed (YouTube and Facebook)", label='Enter Video URL',  max_length=500, icon='media', null=True, blank=True, template='streams/video_embed_block.html')
     googlemap = CharBlock("Google Calendar URL", label='Enter Google Map URL', icon='site', max_length=500, null=True, blank=True, template='streams/google_map_block.html')
     googlecal = CharBlock("Google Calendar URL", label='Enter Google Calendar URL', max_length=500, icon='date', null=True, blank=True, template='streams/google_cal_block.html')
-    # Complex Blocks
-    code = ContentStreamBlock()
-    richtext = RichTextBlock()
-    card = CardBlock()
-    cards = CardGroupBlock()
     carousel = CarouselBlock()
+    cards = CardGroupBlock()
+    testimonial = TestimonialBlock()
+
     button = ButtonBlock()
     buttongroup = ButtonGroupBlock()
-    testimonial = TestimonialBlock()
-    columns = ColumnTwoBlock()
+
+    code = ContentStreamBlock()
 
     class Meta:
         icon = 'cogs'
