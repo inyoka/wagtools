@@ -54,7 +54,7 @@ class Google(models.Model):
 
 @register_snippet
 class Facebook(models.Model):
-    site_tag = models.CharField(max_length=255)
+    site_tag = models.CharField(max_length=1024)
 
     class Meta:
         verbose_name = "Facebook site code"
