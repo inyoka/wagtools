@@ -13,6 +13,8 @@
 
 .stream-item p {
   text-align: justify;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
 }
 
 .stream-item h1, .stream-item h2, .stream-item h3, .stream-item h4, .stream-item h5, .stream-item .jumbotron {
