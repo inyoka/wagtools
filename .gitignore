@@ -135,7 +135,6 @@ dmypy.json
 .pytype/
 **/migrations/*
 templates/streams/notes.html
-*.map
 *.scss
 nohup.out
 notes/*
