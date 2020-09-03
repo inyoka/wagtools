@@ -116,7 +116,7 @@ class SectionPage(Page, Seo):
     parent_page_types = ['wagtools.SectionIndexPage']
 
     def get_template(self, request):
-        return 'home/home_page.html'
+        return 'sections/section_page.html'
 
     def get_context(self, request):
         context = super(SectionPage, self).get_context(request)
