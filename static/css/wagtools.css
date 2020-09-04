@@ -58,6 +58,26 @@ h2, h3, h4, h5 {
   padding-bottom: 1em;
 }
 
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.6em;
+}
+
+h4 {
+  font-size: 1.4em;
+}
+
+h5 {
+  font-size: 1.2em;
+}
+
 div.col-md-6 {
   padding: 0;
 }
@@ -84,7 +104,7 @@ img {
 
 @media screen and (max-width: 600px) {
   h1, h2, h3, h4, h5, h6, .display-4 {
-    font-size: 2rem;
+    padding-bottom: 0;
   }
 }
 /*# sourceMappingURL=wagtools.css.map */
