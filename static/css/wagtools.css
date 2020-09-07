@@ -61,11 +61,6 @@ input[type="submit"],
   vertical-align: middle;
 }
 
-.nav-item, .nav-link {
-  font-size: 1.5em;
-  font-display: bold;
-}
-
 main {
   min-height: 400px;
 }
@@ -125,6 +120,10 @@ img {
 @media screen and (max-width: 600px) {
   h1, h2, h3, h4, h5, h6, .display-4 {
     padding-bottom: 0;
+  }
+  .nav-item, .nav-link {
+    font-size: 1.5em;
+    font-display: bold;
   }
 }
 /*# sourceMappingURL=wagtools.css.map */
