@@ -46,6 +46,26 @@
   background-color: #00695c;
 }
 
+textarea,
+input.text,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+.input-checkbox {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.center {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.nav-item, .nav-link {
+  font-size: 1.5em;
+  font-display: bold;
+}
+
 main {
   min-height: 400px;
 }
