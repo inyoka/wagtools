@@ -1,0 +1,25 @@
+{% load wagtailcore_tags %}
+
+<div class="alert alert-dismissible text-center cookiealert" role="alert">
+    <div class="cookiealert-container m-auto">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+        <div> 
+        Can we use Cookies to monitor sites usage & remember you? <a href="http://cookiesandyou.com/" target="_blank">What are cookies?</a> 
+        </div>
+
+        <div class="d-flex justify-content-center mt-2">
+            <a href="{{ page.get_site.root_url }}/privacy-policy/" target="_blank">View our Privacy Policy</a>
+
+            <button type="button" class="btn btn-primary btn-sm acceptcookies mx-4" aria-label="Close">
+                Agree
+            </button>
+
+            <button type="button" class="btn btn-primary btn-sm declinecookies" aria-label="Close">
+                No cookies
+            </button> 
+        </div>
+    </div>
+</div>
