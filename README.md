@@ -1,12 +1,39 @@
 # wagtools
-Drop-in app providing streamfields, social links field, contact form, and sections.
+Drop-in app providing streamfields, social links field, contact form, sections and cookie acceptance.
 
+Essentially an amalgamation of several existing projects which provide :
 
-Essentially an amalgamation of several existing projects such as :
+- All pages have drop-in Streamfield Bootstrap elements such as Carousels, Button Groups, Images, Jumbotrons (with background images), Cards Calendars, Maps etc.
+- Form page ready to create contact pages and questionairres.
+- Easily embed Facebook and Google Analytic codes through Snippets.
+- Sections / Blog pages with 3 Index page styles to choose from.
+- Built in Cookie acceptance popup built with JavaScript and CSS.
 
-- [Wagtail-Streams-App: Drop in Stream field app.] (https://github.com/chandra-kumala-school/Wagtail-Streams-App)
-- [Wagtail-Contact-App: Wagtail contact page app.] (https://github.com/chandra-kumala-school/Wagtail-Contact-App)
-- [Wagtail-Social-App: Meta, Social Media and Facebook and Google Marketing code.] (https://github.com/chandra-kumala-school/Wagtail-Social-App)
-- [Wagtail-Sections-App: Wagtail App that provides site sections and sub-pages.] (https://github.com/chandra-kumala-school/Wagtail-Sections-App)
+This app is under active development, please log bugs in the issues section.
 
-This apps were updated to use the Streamfields system in Wagtail.
+# Installation
+Ensure you are using Bootstrap
+https://getbootstrap.com/ - Install [Bootstrap 4](https://getbootstrap.com/) locally or use a CDN.
+
+Inside your Wagtail installation use ...
+```
+git clone https://github.com/chandra-kumala-school/wagtools.git
+```
+Add wagtools into **settings.py** in the INSTALLED_APPS section:
+
+```
+INSTALLED_APPS = [
+
+  'wagtools', # << Add wagtools
+  'wagtail.contrib.forms',
+  'wagtail.contrib.redirects',
+  'wagtail.embeds',
+  ...
+]
+```
+Run makemigrations and then migrate the database changes :
+```
+./manage.py makemigrations
+./manage.py migrate
+./manage.py runserver
+```
