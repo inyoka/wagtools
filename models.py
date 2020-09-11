@@ -41,7 +41,7 @@ from wagtail.admin.edit_handlers import (
 
 from wagtail.search import index
 
-from wagtools.snippet import Seo, Google, Facebook, SocialLinks
+from wagtools.snippet import Seo, Google, Facebook, SocialLinks, EditableFooter
 from wagtools.blocks import CommonStreamBlock
 
 
