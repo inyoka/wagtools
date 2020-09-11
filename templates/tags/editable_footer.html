@@ -1,0 +1,7 @@
+{% for element in footer_elements %}
+    <div class="p-1">
+        <a class="align-middle text-center {{ element.css }}" {% if element.link %} href="{{ element.link }}" {% endif %} target="_blank" title="{{ element.title}}">
+            {% if element.icon %}<i class="{{ element.icon }}"></i>{% endif %}{{ element.text }}
+        </a>
+    </div>  
+{% endfor %}

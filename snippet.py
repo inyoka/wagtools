@@ -94,3 +94,29 @@ class SocialLinks(models.Model):
         if self.text==None:
             return self.hover
         return self.text
+
+
+@register_snippet
+class EditableFooter(models.Model):
+    text = models.CharField("Visible text (eg. Latest School Bulletin)", max_length=255, null=True, blank=True)  # eg. Decembers Bulletin
+    link = models.CharField("Link to resource (eg tel:+62-061-661-6765)", max_length=255, null=True, blank=True)
+    hover = models.CharField("Desc on hover (eg. December Bulletin)", max_length=255, null=True, blank=True)  # eg. Latest School Bulletin
+    icon = models.CharField("FA Icon (eg. fas fa-newspaper fa-fw fa-2x)", max_length=255, null=True, blank=True)
+    css = models.CharField("List CSS Classes (eg. text-primary bg-transparent btn btn-outine-dark py-0)", max_length=255, null=True, blank=True)  # eg. text-primary py-0 fa-2x
+
+    class Meta:
+        verbose_name = "Footer element"
+        verbose_name_plural = "FOOTER : Add lines, links and icons to the site footer"
+
+    panels = [
+        FieldPanel('text'),
+        FieldPanel('link'),
+        FieldPanel('hover'),
+        FieldPanel('icon'),
+        FieldPanel('css'),
+    ]
+
+    def __str__(self):
+        if self.text==None:
+            return self.hover
+        return self.text
