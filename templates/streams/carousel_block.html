@@ -2,7 +2,6 @@
 
 <div class="carousel-embed shadow stream-carousel {{ stream.block_type }}">
     <div id="carousel" class="carousel slide" data-ride="carousel">
-        Hello {{ self.slides|length }}
         {% if self.slides|length > 1 %}
         <ol class="carousel-indicators">
             {% for item in self.slides %}
@@ -27,7 +26,6 @@
             {% endfor %}
 
         </div>
-        Hello {{ self.slides|length }}
         {% if self.slides|length > 1 %}
         <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
