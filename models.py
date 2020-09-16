@@ -49,7 +49,7 @@ class DefaultHomePage(Page, Seo):
     my_stream = StreamField(CommonStreamBlock(required=False), null=True, blank=True)
 
     def get_context(self, request):
-        context = super(HomePage, self).get_context(request)
+        context = super(DefaultHomePage, self).get_context(request)
         context['menuitems'] = Site.find_for_request(request).root_page.get_descendants(
             inclusive=True).live().in_menu()
         return context
