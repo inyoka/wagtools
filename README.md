@@ -6,7 +6,7 @@ The idea is that using Wagtail and Wagtools you can get a Django website up and 
 
 Essentially an amalgamation of several projects I created which provided :
 
-- All pages have drop-in Streamfield Bootstrap elements such as Carousels, Button Groups, Images, Jumbotrons (with background images), Cards Calendars, Maps etc.
+- All pages have drop-in Streamfield Bootstrap elements such as Carousels, Button Groups, Images, Jumbotrons (with background images), Cards, Google Calendars & Maps etc.
 - Form page ready to create contact pages and questionairres.
 - Easily embed Facebook and Google Analytic codes through Snippets.
 - Sections / Blog pages with 3 Index page styles to choose from.
