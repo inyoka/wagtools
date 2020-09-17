@@ -1,13 +1,12 @@
-.container {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+p:empty {
+  display: none;
 }
 
 .stream-item {
   padding: 0em;
+  margin: 0;
   margin-left: 2rem;
   margin-right: 2rem;
-  margin-bottom: 2rem;
   max-width: 100%;
 }
 
@@ -93,12 +92,11 @@ h5 {
   font-size: 1.2em;
 }
 
-div.col-md-6 {
-  padding: 0;
+#carousel {
+  max-width: 970px;
 }
 
-div.stream-carousel, carousel-inner {
-  max-width: 970px;
+div.col-md-6 {
   padding: 0;
 }
 
@@ -120,6 +118,10 @@ img {
 
 .shadow-light {
   text-shadow: 0.02em 0.02em white;
+}
+
+p:empty {
+  display: none;
 }
 
 @media screen and (max-width: 600px) {

@@ -1,40 +1,38 @@
 {% load static %} {% load wagtailimages_tags %}
 
-<div class="m-0 mx-auto mb-3 carousel-embed shadow stream-carousel {{ stream.block_type }}">
-    <div id="carousel" class="carousel slide" data-ride="carousel">
-        {% if self.slides|length > 1 %}
-        <ol class="carousel-indicators">
-            {% for item in self.slides %}
-            <li data-target="#carousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %} class="active" {% endif %}></li>
-            {% endfor %}
-        </ol>
-        {% endif %}
+<div id="carousel" class="carousel slide mx-auto mb-3 stream-carousel {{ stream.block_type }}" data-ride="carousel">
+    {% if self.slides|length > 1 %}
+    <ol class="carousel-indicators">
+        {% for item in self.slides %}
+        <li data-target="#carousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %} class="active" {% endif %}></li>
+        {% endfor %}
+    </ol>
+    {% endif %}
 
-        <div class="carousel-inner">
-            {% for slide in self.slides %}
-            <div class="px-0 carousel-item {% if forloop.first %} active {% endif %}">
-                {% image slide.background fill-970x500 class="d-block img-fluid" alt="..." %} {% if slide.title or slide.caption %}
-                <div class="carousel-caption h-75 {{ slide.classes }}">
-                    <h1 class="display-4 mw-75 carousel-font {{ slide.classesTitle }}">{{ slide.title }}</h2>
-                        <p class="lead d-none d-sm-block {{ slide.classesCaption }}">{{ slide.caption }}</p class="carousel-caption h-75 d-none d-md-block">
-                        {% if slide.link %}
-                        <a href="{{ slide.link }}" class="btn btn-primary d-none d-md-block">{{ slide.button }}</a class="carousel-caption h-75 d-none d-md-block">
-                    {% endif %}
-                </div>
+    <div class="carousel-inner">
+        {% for slide in self.slides %}
+        <div class="px-0 carousel-item {% if forloop.first %} active {% endif %}">
+            {% image slide.background fill-970x500 class="d-block img-fluid" alt="..." %} {% if slide.title or slide.caption %}
+            <div class="carousel-caption h-75 {{ slide.classes }}">
+                <h1 class="display-4 mw-75 carousel-font {{ slide.classesTitle }}">{{ slide.title }}</h2>
+                    <p class="lead d-none d-sm-block {{ slide.classesCaption }}">{{ slide.caption }}</p class="carousel-caption h-75 d-none d-md-block">
+                    {% if slide.link %}
+                    <a href="{{ slide.link }}" class="btn btn-primary d-none d-md-block">{{ slide.button }}</a class="carousel-caption h-75 d-none d-md-block">
                 {% endif %}
             </div>
-            {% endfor %}
-
+            {% endif %}
         </div>
-        {% if self.slides|length > 1 %}
-        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-        {% endif %}
+        {% endfor %}
+
     </div>
+    {% if self.slides|length > 1 %}
+    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    {% endif %}
 </div>
