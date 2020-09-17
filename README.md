@@ -61,10 +61,10 @@ Bootstrap has a growing number of SVG icons available, although they are **not y
 https://icons.getbootstrap.com/ - [Built -in Bootstrap Icons](https://icons.getbootstrap.com/)
 
 # Add Editable Footer
-Add this to **home/templates/partials._footer.html** :
-'''
+Add this to **home/templates/partials/_footer.html** :
+```html
     {% editable_footer_tag %}
-'''
+```
 
 # Enable Cookie Consent
 
