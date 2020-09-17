@@ -17,7 +17,7 @@ Essentially an amalgamation of several projects I created which provided :
 This app is under active development, please log bugs in the [issues section](https://github.com/chandra-kumala-school/wagtools/issues).
 
 # Installation
-...Note : Currently you will need to write your own Header, Footer and Nav partials :
+⋅⋅⋅Note : Currently you will need to write your own Header, Footer and Nav partials :
 **yoursite/home/templates/partials/_footer.html** 
 **yoursite/home/templates/partials/_header.html** && 
 **yoursite/home/templates/partials/_nav.html** .  
