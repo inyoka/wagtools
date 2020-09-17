@@ -2,7 +2,7 @@
 
 Wagtools is an app for Wagtail, a CMS built on Django and Python 3.  Wagtools helps you get Wagtail sites up and running really quickly by providing default pages with many Bootstrap elelments already available via streamfields.  Wagtail Streamfields allow you to choose which elements you would like to ue, and in what order.  The app also provides, social links fields, contact forms, blog / article sections and optional cookie acceptance.
 
-The idea is that using Wagtail and Wagtools you can get a Django website up and hosted within an hour.  We recommend [pythonanywhere.com/](https://www.pythonanywhere.com/), you will need to create a Virtual Environment to use the latest version of Python.  I recommend starting here [Deploying Django to Python Anywhere](https://help.pythonanywhere.com/pages/DeployExistingDjangoProject/).  An alternative might be [CookieCutter](https://github.com/cookiecutter/cookiecutter), although for most basic sites this can get confusing.
+The idea is that using Wagtail and Wagtools you can get a Django website up and hosted within an hour.  We recommend [pythonanywhere.com](https://www.pythonanywhere.com/), you will need to create a Virtual Environment to use the latest version of Python.  I recommend starting here [Deploying Django to Python Anywhere](https://help.pythonanywhere.com/pages/DeployExistingDjangoProject/).  An alternative to Wagtools might be [CookieCutter](https://github.com/cookiecutter/cookiecutter), although for most basic sites this can get confusing.
 
 Essentially an amalgamation of several projects I created which provided :
 
