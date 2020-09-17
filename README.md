@@ -61,11 +61,11 @@ Run makemigrations and then migrate the database changes :
 
 # Bootstrap CSS Insertion
 
-Many elements have CSS field which is intended to allow for you to insert Bootstrap classes such as **bg-success** or **text-warning** etc
+Many elements have a CSS field which allows you to insert Bootstrap classes such as **bg-success** or **text-warning** etc
 See here :
 https://getbootstrap.com/docs/4.5/utilities/colors/ - Use [Bootstrap 4](https://getbootstrap.com/docs/4.5/utilities/colors/) color classes.
 
-However you can just as easily create your own CSS classes in the SASS files provided.
+However you can just as easily insert your own CSS classes.
 
 # Social Links
 You can use the Social Links snippets to store and display a group of social media links with icons, which can be styled with BS classes or your own.  It is recommended that you use icons such as those available at 
