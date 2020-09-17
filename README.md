@@ -8,6 +8,7 @@ Essentially an amalgamation of several existing projects which provide :
 - Easily embed Facebook and Google Analytic codes through Snippets.
 - Sections / Blog pages with 3 Index page styles to choose from.
 - Built in Cookie acceptance popup built with JavaScript and CSS.
+- Inject Boostrap styling via classes.  FOr example you can add the class text-dark on the carousel if you have a light image.  Or add "btn btn-success" to turn some links into buttons etc.  Very useful for helping things pop out with having to edit the site code.
 
 This app is under active development, please log bugs in the [issues section](https://github.com/chandra-kumala-school/wagtools/issues).
 
