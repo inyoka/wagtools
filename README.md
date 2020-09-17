@@ -1,21 +1,25 @@
 # Wagtools
-Drop-in app providing streamfields, social links field, contact form, sections and cookie acceptance.
 
-Essentially an amalgamation of several existing projects which provide :
+Wagtools is an app for Wagtail, a CMS built on Django and Python 3.  Wagtools helps you get Wagtail sites up and running really quickly by providing default pages with many Bootstrap elelments already available via streamfields.  Wagtail Streamfields allow you to choose which elements you would like to ue, and in what order.  The app also provides, social links fields, contact forms, blog / article sections and optional cookie acceptance.
+
+The idea is that using Wagtail and Wagtools you can get a Django website up and hosted within an hour.  We recommend [pythonanywhere.com/](https://www.pythonanywhere.com/), you will need to create a Virtual Environment to use the latest version of Python.  I recommend starting here [Deploying Django to Python Anywhere](https://help.pythonanywhere.com/pages/DeployExistingDjangoProject/).  An alternative might be [CookieCutter](https://github.com/cookiecutter/cookiecutter), although for most basic sites this can get confusing.
+
+Essentially an amalgamation of several projects I created which provided :
 
 - All pages have drop-in Streamfield Bootstrap elements such as Carousels, Button Groups, Images, Jumbotrons (with background images), Cards Calendars, Maps etc.
 - Form page ready to create contact pages and questionairres.
 - Easily embed Facebook and Google Analytic codes through Snippets.
 - Sections / Blog pages with 3 Index page styles to choose from.
 - Built in Cookie acceptance popup built with JavaScript and CSS.
-- Inject Boostrap styling via classes.  FOr example you can add the class text-dark on the carousel if you have a light image.  Or add "btn btn-success" to turn some links into buttons etc.  Very useful for helping things pop out with having to edit the site code.
+- Inject Boostrap styling via classes (or your own classes).  For example you can add the class text-dark on the carousel if you have a light image.  Or add "btn btn-success" to turn some links into buttons etc.  Very useful for helping things pop out with having to edit the site code.
 - A Footer snippet has been added so you can add editable elements into the footer.
 
 This app is under active development, please log bugs in the [issues section](https://github.com/chandra-kumala-school/wagtools/issues).
 
 # Installation
-Ensure you are using Bootstrap
+Ensure you are using Bootstrap 
 https://getbootstrap.com/ - Install [Bootstrap 4](https://getbootstrap.com/) locally or use a CDN.
+Currently bootstrap is required for this App to render correctly. In the future (asclasses are slowly moved into Wagtools own SCSS) it might be possible to avoid BS, and entirely.
 
 Inside your Wagtail installation use ...
 ```
