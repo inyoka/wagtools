@@ -17,7 +17,21 @@ Essentially an amalgamation of several projects I created which provided :
 This app is under active development, please log bugs in the [issues section](https://github.com/chandra-kumala-school/wagtools/issues).
 
 # Installation
-#Note : Currently you will need to write your own Header, Footer and Nav partials
+...Note : Currently you will need to write your own Header, Footer and Nav partials :
+**yoursite/home/templates/partials/_footer.html** 
+**yoursite/home/templates/partials/_header.html** && 
+**yoursite/home/templates/partials/_nav.html** .  
+
+Reference the header and footer in your base.html like so :
+```
+{% include 'partials/_header.html' %}
+```
+And your _nav.html inside your header like this :
+{% block nav %}
+{% include 'partials/_nav.html' %}
+{% endblock %}
+We use a **block** for the nav, so that the **orphan contact form** can override the nav and show nothing.  (Marketing campaigns often want a contact form with nav links so visitors fill out the form, rather than explore the site.) 
+
 Ensure you are using Bootstrap 
 https://getbootstrap.com/ - Install [Bootstrap 4](https://getbootstrap.com/) locally or use a CDN.
 Currently bootstrap is required for this App to render correctly. In the future (asclasses are slowly moved into Wagtools own SCSS) it might be possible to avoid BS, and entirely.
@@ -61,7 +75,7 @@ Bootstrap has a growing number of SVG icons available, although they are **not y
 https://icons.getbootstrap.com/ - [Built -in Bootstrap Icons](https://icons.getbootstrap.com/)
 
 # Add Editable Footer
-Add this to **home/templates/partials/_footer.html** :
+Add this to **yoursite/home/templates/partials/_footer.html** :
 ```html
     {% editable_footer_tag %}
 ```
