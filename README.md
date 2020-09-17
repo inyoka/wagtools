@@ -60,6 +60,11 @@ https://fontawesome.com/ - Use [FontAwesome](https://getbootstrap.com/docs/4.5/u
 Bootstrap has a growing number of SVG icons available, although they are **not yet supported** : 
 https://icons.getbootstrap.com/ - [Built -in Bootstrap Icons](https://icons.getbootstrap.com/)
 
+# Add Editable Footer
+Add this to **home/templates/partials._footer.html** :
+'''
+    {% editable_footer_tag %}
+'''
 
 # Enable Cookie Consent
 
