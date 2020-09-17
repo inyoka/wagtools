@@ -97,7 +97,7 @@ div.col-md-6 {
   padding: 0;
 }
 
-div.stream-carousel {
+div.stream-carousel, carousel-inner {
   max-width: 970px;
   padding: 0;
 }

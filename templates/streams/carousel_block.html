@@ -13,7 +13,7 @@
         <div class="carousel-inner">
             {% for slide in self.slides %}
             <div class="px-0 carousel-item {% if forloop.first %} active {% endif %}">
-                {% image slide.background fill-1000x500 class="d-block img-fluid" alt="..." %} {% if slide.title or slide.caption %}
+                {% image slide.background fill-970x500 class="d-block img-fluid" alt="..." %} {% if slide.title or slide.caption %}
                 <div class="carousel-caption h-75 {{ slide.classes }}">
                     <h1 class="display-4 mw-75 carousel-font {{ slide.classesTitle }}">{{ slide.title }}</h2>
                         <p class="lead d-none d-sm-block {{ slide.classesCaption }}">{{ slide.caption }}</p class="carousel-caption h-75 d-none d-md-block">
