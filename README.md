@@ -17,6 +17,7 @@ Essentially an amalgamation of several projects I created which provided :
 This app is under active development, please log bugs in the [issues section](https://github.com/chandra-kumala-school/wagtools/issues).
 
 # Installation
+#Note : Currently you will need to write your own Header, Footer and Nav partials
 Ensure you are using Bootstrap 
 https://getbootstrap.com/ - Install [Bootstrap 4](https://getbootstrap.com/) locally or use a CDN.
 Currently bootstrap is required for this App to render correctly. In the future (asclasses are slowly moved into Wagtools own SCSS) it might be possible to avoid BS, and entirely.
