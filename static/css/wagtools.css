@@ -97,6 +97,11 @@ div.col-md-6 {
   padding: 0;
 }
 
+div.stream-carousel {
+  max-width: 970px;
+  padding: 0;
+}
+
 /* Main Level */
 ol, ul {
   text-align: left;
@@ -118,6 +123,9 @@ img {
 }
 
 @media screen and (max-width: 600px) {
+  img {
+    border-radius: 0;
+  }
   h1, h2, h3, h4, h5, h6, .display-4 {
     padding-bottom: 0;
   }

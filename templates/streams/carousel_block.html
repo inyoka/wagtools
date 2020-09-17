@@ -1,6 +1,6 @@
 {% load static %} {% load wagtailimages_tags %}
 
-<div class="carousel-embed shadow stream-carousel {{ stream.block_type }}">
+<div class="mx-auto m-0 mb-3 carousel-embed shadow stream-carousel {{ stream.block_type }}">
     <div id="carousel" class="carousel slide" data-ride="carousel">
         {% if self.slides|length > 1 %}
         <ol class="carousel-indicators">
@@ -12,8 +12,8 @@
 
         <div class="carousel-inner">
             {% for slide in self.slides %}
-            <div class="carousel-item {% if forloop.first %} active {% endif %}">
-                {% image slide.background fill-1200x600 class="d-block img-fluid" alt="..." %} {% if slide.title or slide.caption %}
+            <div class="px-0 carousel-item {% if forloop.first %} active {% endif %}">
+                {% image slide.background fill-1000x500 class="d-block img-fluid" alt="..." %} {% if slide.title or slide.caption %}
                 <div class="carousel-caption h-75 {{ slide.classes }}">
                     <h1 class="display-4 mw-75 carousel-font {{ slide.classesTitle }}">{{ slide.title }}</h2>
                         <p class="lead d-none d-sm-block {{ slide.classesCaption }}">{{ slide.caption }}</p class="carousel-caption h-75 d-none d-md-block">
