@@ -1,7 +1,3 @@
-p:empty {
-  display: none;
-}
-
 .stream-item {
   padding: 0em;
   margin: 0;
@@ -43,6 +39,11 @@ p:empty {
 
 .bg-purple {
   background-color: #00695c;
+}
+
+* {
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 
 textarea,
@@ -124,6 +125,28 @@ p:empty {
   display: none;
 }
 
+.btn-facebook {
+  color: #fff;
+  background-color: #3b5998;
+  border-color: #3b5998;
+}
+
+.btn-instagram {
+  color: #fff;
+  background-color: #3f729b;
+  border-color: #3f729b;
+}
+
+.btn-whatsapp {
+  color: #25D366;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.btn-nav {
+  color: #25D366;
+}
+
 @media screen and (max-width: 600px) {
   img {
     border-radius: 0;
@@ -132,6 +155,8 @@ p:empty {
     padding-bottom: 0;
   }
   .nav-item, .nav-link {
+    margin: 0;
+    padding: 0;
     font-size: 1.5em;
     font-display: bold;
   }
