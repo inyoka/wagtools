@@ -133,8 +133,10 @@ p:empty {
 
 .btn-instagram {
   color: #fff;
-  background-color: #3f729b;
-  border-color: #3f729b;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#405DE6), color-stop(#5851DB), color-stop(#833AB4), color-stop(#C13584), color-stop(#E1306C), color-stop(#FD1D1D), color-stop(#F56040), color-stop(#F77737), color-stop(#FCAF45), to(#FFDC80));
+  background-image: linear-gradient(to bottom right, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 .btn-whatsapp {
