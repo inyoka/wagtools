@@ -139,3 +139,7 @@ templates/streams/notes.html
 nohup.out
 notes/*
 .vscode/settings.json
+.vscode/settings.json
+.gitignore.swp
+.vscode/settings.json
+.vscode/settings.json
