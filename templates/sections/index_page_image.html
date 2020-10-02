@@ -14,28 +14,26 @@
         {% include_block stream %}
     {% endfor %}
 
-
-    <row class="row col-12">
-
       {% for post in blogpages %}
       {% with post=post.specific %}
-  
-      <div class="col-6">
-          {% image post.main_image original as photo %}
-          <!-- alt use to force aspect ratio : fill-1200x800 -->
-          <img src='{{photo.url}}' class="img-fluid w-100" alt="{{ photo.alt}}">
-            <p>{{ post.caption }}</p>
-      </div>
-      <div class="col-6">
-        <h3>{{ post.title }}</h3>
-        <p class="card-text">{{ post.body|richtext }}</p>
-        <span class="w-100 mx-auto text-center center-block"><a class="w-100 btn btn-primary mt-2" href="{{ post.url }}">Open</a></span>          
-      </div>
-  
-      {% endwith %}
+        <div class="container">
+            <div class="d-flex {% if forloop.counter|divisibleby:2 %} flex-column flex-md-row-reverse {% else %} flex-column flex-md-row {% endif %} mx-3"> 
+                <div class="w-100 text-center my-3">
+                    {% image post.main_image fill-1200x800 original as photo %}
+                    <!-- alt use to force aspect ratio : fill-1200x800 -->
+                    <img src='{{photo.url}}' class="img-fluid w-100 w-md-75" alt="{{ photo.alt}}">
+                    <p>{{ post.caption }}</p>
+                </div>
+                <div class="d-flex col-12 col-md-6 align-items-center text-center mx-md-3"> 
+                    <div class="justify-content-between">
+                        <h3 class="p-0">{{ post.title }}</h3>
+                        {% if post.body %} <div class="my-md-4"> {{ post.body|richtext }} </div> {% endif %}
+                        <a class="btn btn-primary mt-2" href="{{ post.url }}">Open "{{ post.title }}"</a>
+                    </div>       
+                </div>
+            </div>
+        </div>
+        {% endwith %}
       {% endfor %}
 
-
-    </row>
-
-{% endblock %}
+{% endblock content %}
