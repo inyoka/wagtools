@@ -1,3 +1,11 @@
+h1.stream-item {
+  padding: 2em;
+}
+
+.argh {
+  background-attachment: fixed;
+}
+
 .stream-item {
   padding: 0em;
   margin: 0;
@@ -125,23 +133,46 @@ p:empty {
   display: none;
 }
 
+.btn-cpt {
+  color: #9900cc;
+  background-color: #fff;
+  border-color: #fff;
+  border-width: 2px;
+  border-color: #9900cc;
+  font-weight: 600;
+  font-weight: bold;
+}
+
+.btn-cpt-invert {
+  color: #fff;
+  background-color: #9900cc;
+  border-color: #9900cc;
+  border-width: 1px;
+  border-color: #fff;
+  font-weight: 600;
+  font-weight: bold;
+}
+
 .btn-facebook {
   color: #fff;
   background-color: #3b5998;
-  border-color: #3b5998;
+  border-color: #fff;
 }
 
 .btn-instagram {
   color: #fff;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#405DE6), color-stop(#5851DB), color-stop(#833AB4), color-stop(#C13584), color-stop(#E1306C), color-stop(#FD1D1D), color-stop(#F56040), color-stop(#F77737), color-stop(#FCAF45), to(#FFDC80));
   background-image: linear-gradient(to bottom right, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
   background-clip: text;
-  text-fill-color: transparent;
 }
 
 .btn-whatsapp {
   color: #23b039;
-  background-color: #fff;
+  background-color: #000;
+  border-color: #fff;
+}
+
+.border-cpt {
+  border-width: 2px;
   border-color: #fff;
 }
 
