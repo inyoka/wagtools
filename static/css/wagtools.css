@@ -9,8 +9,6 @@ h1.stream-item {
 .stream-item {
   padding: 0em;
   margin: 0;
-  margin-left: 2rem;
-  margin-right: 2rem;
   max-width: 100%;
 }
 
@@ -18,11 +16,20 @@ h1.stream-item {
   text-align: justify;
   padding-top: .5rem;
   padding-bottom: .5rem;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .stream-item h1, .stream-item h2, .stream-item h3, .stream-item h4, .stream-item h5, .stream-item .jumbotron {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .stream-item {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
 }
 
 .bg-lightgreen {
@@ -131,26 +138,6 @@ img {
 
 p:empty {
   display: none;
-}
-
-.btn-cpt {
-  color: #9900cc;
-  background-color: #fff;
-  border-color: #fff;
-  border-width: 2px;
-  border-color: #9900cc;
-  font-weight: 600;
-  font-weight: bold;
-}
-
-.btn-cpt-invert {
-  color: #fff;
-  background-color: #9900cc;
-  border-color: #9900cc;
-  border-width: 1px;
-  border-color: #fff;
-  font-weight: 600;
-  font-weight: bold;
 }
 
 .btn-facebook {
