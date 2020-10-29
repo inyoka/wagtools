@@ -46,9 +46,14 @@ class ContentStreamBlock(StreamBlock):
         icon='code'
 
 class QuoteBlock(StructBlock):
-    quotation = TextBlock(required=True, max_length=400)
-    leadtext = CharBlock(required=False, max_length=50)
-    source = CharBlock(required=True, max_length=50)
+    leadtext = TextBlock(required=False)
+    quotation = TextBlock(required=True)
+    source = CharBlock(required=True, max_length=150)
+
+    class Meta:
+        template = "streams/quotation_block.html"
+        icon = 'user'
+        label = 'Famous Quote'
 
 
 class CardBlock(StructBlock):
@@ -183,6 +188,7 @@ class CommonStreamBlock(StreamBlock):
     carousel = CarouselBlock()
     cards = CardGroupBlock()
     testimonial = TestimonialBlock()
+    simplequote = QuoteBlock()
 
     button = ButtonBlock()
     buttongroup = ButtonGroupBlock()

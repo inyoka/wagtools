@@ -1,6 +1,22 @@
 {% load static %}
-
-<blockquote class="stream-item blockquote">
-    <p class="mb-0">{{ self.quote }}</p>
-    <footer class="blockquote-footer">{{ self.leadtext }}<cite title="Source Title">{{ self.source }}</cite></footer>
-  </blockquote>
+<div class="row container mx-auto">
+<div class="card stream-item mx-auto mx-md-5 my-3 bg-light shadow">
+  <h1>quotation</h1>
+  {% if self.leadtext %}
+  <div class="card-header">
+    {{ self.leadtext }}
+  </div>
+  {% endif %}
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <!-- <p>{{ self.quotation }}</p> -->
+      <div class="d-flex">
+        <span class="text-dark"><i class="fas fa-quote-left"></i></span>
+        <p class="card-text p-2">{{ self.quotation }}</p>
+        <span class="align-self-end mb-2 text-dark"><i class="fas fa-quote-right"></i></span>
+    </div>
+      <footer class="blockquote-footer text-right mt-2"><cite title="Source Title">{{ self.source }}</cite></footer>
+    </blockquote>
+  </div>
+</div>
+</div>

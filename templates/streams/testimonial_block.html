@@ -1,20 +1,34 @@
 {% load static wagtailimages_tags %}
+<div class="row container mx-auto">
 
-<div class="card mx-auto my-3 text-center stream-item {{ self.block_type }}" style="max-width: 540px;">
+<div class="card mx-auto mx-md-5 my-3 text-center stream-item {{ self.block_type }} shadow">
     <div class="row no-gutters {% if self.test_reversed %} flex-md-row-reverse {% else %} flex-md-row {% endif %}">
-      <div class="col-sm-4 mx-auto w-50 w-sm-100 d-flex align-content-center">
-        {% image self.test_pic fill-150x180 as photo %}
+      {% if self.test_pic %}
+      <div class="d-none d-md-inline m-auto p-3">
+        {% image self.test_pic max-200x200 as photo %}
         <img src="{{ photo.url }}" class="card-img" alt="{{ photo.alt }}">
       </div>
-      <div class="col-sm-8 align-self-center">
-        <div class="card-body">
+      {% endif %}
+      <div class="col align-self-center">
+        <div class="card-body m-0 p-1 px-3">
             <div class="d-flex">
-                <span class="text-dark"><i class="fas fa-quote-left fa-2x"></i></span>
-                <p class="card-text">{{ self.test_quote }}</p>
-                <span class="align-self-end mb-2 text-dark"><i class="fas fa-quote-right fa-2x"></i></span>
+                <span class="text-dark"><i class="fas fa-quote-left"></i></span>
+                <p class="card-text p-2">{{ self.test_quote }}</p>
+                <span class="align-self-end mb-2 text-dark"><i class="fas fa-quote-right"></i></span>
             </div>
-          <h5 class="card-title m-0 signature text-dark">{{ self.test_name }}</h5>
+          <!-- <h5 class="card-title m-0 signature text-dark">{{ self.test_name }}</h5> -->
+        </div>
+        {% if self.test_pic == None %}
+        <div class="card-footer">
+          {% else %}
+          <h5 class="card-title m-0 signature text-dark">
+          {% endif %}
+          <span class="">{{ self.test_name }}</span>  
+          {% if self.test_pic %}
+          </h5>
+          {% endif %}
         </div>
       </div>
     </div>
+  </div>
   </div>
