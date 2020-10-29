@@ -123,7 +123,7 @@ class SimpleTextBlock(RichTextBlock):
 class TestimonialBlock(StructBlock):
     test_name = TextBlock(blank=True)
     test_quote = TextBlock(blank=True)
-    test_pic = ImageChooserBlock(blank=True)
+    test_pic = ImageChooserBlock(blank=True, required=False)
     test_reversed = BooleanBlock(required=False, default=False)
 
     panels = [
@@ -176,6 +176,7 @@ class CommonStreamBlock(StreamBlock):
     richtext = RichtextBlock()
     columns = ColumnTwoBlock()
     image = ImageChooserBlock("Choose an image ...", label='Choose an image ...', icon='image', template='streams/image_block.html')
+    image_small = ImageChooserBlock("Choose a small image ...", label='Choose a small image ...', icon='image', template='streams/image_small.html')
     videoembed = EmbedBlock("Video embed (YouTube and Facebook)", label='Enter Video URL',  max_length=500, icon='media', null=True, blank=True, template='streams/video_embed_block.html')
     googlemap = CharBlock("Google Calendar URL", label='Enter Google Map URL', icon='site', max_length=500, null=True, blank=True, template='streams/google_map_block.html')
     googlecal = CharBlock("Google Calendar URL", label='Enter Google Calendar URL', max_length=500, icon='date', null=True, blank=True, template='streams/google_cal_block.html')
