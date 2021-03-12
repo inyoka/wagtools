@@ -124,6 +124,19 @@ class SectionPage(Page, Seo):
             inclusive=True).live().in_menu()
         return context
     
+    def prev_section(self):
+        if self.get_prev_sibling():
+            return self.get_prev_sibling()
+        else:
+            return self.get_siblings().last()
+
+    def next_section(self):
+        if self.get_next_sibling():
+            return self.get_next_sibling()
+        else:
+            return self.get_siblings().first()
+
+
     def main_image(self):
         gallery_item = self.gallery_images.first()
         if gallery_item:
