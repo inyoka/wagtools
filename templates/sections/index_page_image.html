@@ -10,6 +10,8 @@
 
 {% block content %}
 
+{% include 'partials/_sub_nav.html' %}
+
     {% for stream in page.my_stream %}
         {% include_block stream %}
     {% endfor %}

@@ -13,6 +13,8 @@
             <li class="btn previous bg-success mr-auto"><a href="{{ page.prev_section.url}}">{{ page.prev_section.title }}</a></li>
             <li class="btn next bg-secondary mr-auto"><a href="{{ page.next_section.url}}">{{ page.next_section.title }}</a></li>
         </ul>
+        {% include 'partials/_sub_nav.html' %}
+
 
         <h1> {{ page.title }} </h1>
         

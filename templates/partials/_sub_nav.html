@@ -1,0 +1,32 @@
+{% load static social_link_tags %}
+
+{% if self.get_children %}
+<nav class="navbar navbar-light navbar-expand-lg bg-light justify-content-between container">
+    <div class="w-100 flex justify-content-between">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-brand d-inline">{{ page.title }}</span><span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="flex justify-content-between collapse navbar-collapse" id="navbarSupportedContent">
+    <!-- <a class="navbar-brand d-none d-lg-block">{{ page.title }}</a> -->
+        {% for child in self.get_children %}
+            <a class="nav-link" href="{{child.url}}">{{child.title}} <span class="sr-only">{% if page.title == menu.title %}(current){% endif %}</span></a>
+        {% endfor %}
+    </div>
+</div>
+</nav>
+{% elif self.get_siblings %}
+<nav class="navbar navbar-light navbar-expand-lg bg-light justify-content-between container">
+    <div class="w-100 flex justify-content-between">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>&nbsp<span class="navbar-brand d-inline">{{ self.get_parent.title }}</span>
+      </button>
+      <div class="flex justify-content-between collapse navbar-collapse" id="navbarSupportedContent">
+    <!-- <a class="navbar-brand d-none d-lg-block">{{ self.get_parent.title }}</a> -->
+        {% for sibling in self.get_siblings %}
+            <a class="nav-link" href="{{sibling.url}}">{{sibling.title}} <span class="sr-only">{% if page.title == menu.title %}(current){% endif %}</span></a>
+            {% endfor %}
+
+    </div></div>
+</nav>
+{% endif %}
