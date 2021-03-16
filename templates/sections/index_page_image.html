@@ -10,16 +10,14 @@
 
 {% block content %}
 
-{% include 'partials/_sub_nav.html' %}
-
     {% for stream in page.my_stream %}
         {% include_block stream %}
     {% endfor %}
 
       {% for post in blogpages %}
       {% with post=post.specific %}
-        <div class="container">
-            <div class="d-flex {% if forloop.counter|divisibleby:2 %} flex-column flex-md-row-reverse {% else %} flex-column flex-md-row {% endif %} mx-3"> 
+        <div class="container m-0 p-0 p-md-2">
+            <div class="d-flex {% if forloop.counter|divisibleby:2 %} flex-column flex-md-row-reverse {% else %} flex-column flex-md-row {% endif %} mx-md-3"> 
                 <div class="w-100 text-center my-3">
                     {% image post.main_image fill-1200x800 original as photo %}
                     <!-- alt use to force aspect ratio : fill-1200x800 -->
