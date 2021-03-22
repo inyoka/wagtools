@@ -1,0 +1,30 @@
+{% load static wagtailcore_tags social_link_tags %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark container d-flex justify-content-between">
+    <a class="navbar-brand" href="mailto:simon@inyoka.uk?subject=E-Mail from our website ..."  id="heading">
+        <img src="{% static 'img/nintendo.jpg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+        inyoka.uk$ <span class='blink'>&#x2588</span>
+    </a>
+    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+        {% for menu in menuitems %}
+            {% if not menu.get_children %}
+                <a class="w-100 text-right nav-link{% if page.title == menu.title %} active{% endif %}" href="{{menu.url}}">{{menu.title}}</a>
+            {% else %}
+                <div class="w-100 text-right ml-auto dropdown-menu-left">
+                    <a class="nav-link d-inline{% if page.title == menu.title %} active{% endif %}" href="{{menu.url}}">{{menu.title}}{% if page.title == menu.title %}<span class="sr-only">(current)</span>{% endif %}</a>
+                    <a class="nav-link d-inline dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {% for child in menu.get_children %}
+                                <a class="dropdown-item w-100 text-center {% if child.title == page.title %}font-weight-bold{% endif %}" href="{{child.url}}">{{child.title}}{% if page.title == child.title %}<span class="sr-only">(current)</span>{% endif %}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+</nav>
