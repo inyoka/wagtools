@@ -1,0 +1,39 @@
+{% load static wagtailcore_tags social_link_tags %}
+
+<nav class="navbar navbar-expand-lg bg-secondary navbar-dark p-0">
+    <div id="container" class="container justify-content-between p-1 p-md-2 pr-1">
+        <button class="navbar-toggler p-0 border-0 nobr" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <svg width="2em" height="1.9em" fill="currentColor" version="1.1" viewBox="0 0 16 16">
+                    <path d="m0.77344 0c-0.42846 0-0.77344 0.34497-0.77344 0.77344v1.9531c0 0.42846 0.34497 0.77344 0.77344 0.77344h14.453c0.42846 0 0.77344-0.34498 0.77344-0.77344v-1.9531c0-0.42846-0.34498-0.77344-0.77344-0.77344h-14.453zm0 6.25c-0.42846 0-0.77344 0.34498-0.77344 0.77344v1.9531c0 0.42846 0.34497 0.77344 0.77344 0.77344h14.453c0.42846 0 0.77344-0.34498 0.77344-0.77344v-1.9531c0-0.42846-0.34498-0.77344-0.77344-0.77344h-14.453zm0 6.25c-0.42846 0-0.77344 0.34498-0.77344 0.77344v1.9531c0 0.42846 0.34497 0.77344 0.77344 0.77344h14.453c0.42846 0 0.77344-0.34498 0.77344-0.77344v-1.9531c0-0.42846-0.34498-0.77344-0.77344-0.77344h-14.453z"/>
+                </svg>
+            </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav w-100 align-items-center justify-content-center">
+                {% for menu in menuitems %}
+                        {% if menu.get_children %}
+                        <div class="dropdown text-center p-0 m-0">
+                            <a class="nav-item nav-link d-inline center pt-0 {% if page.title == menu.title %} active{% endif %}" href="{{menu.url}}">{{menu.title}}{% if page.title == menu.title %}<span class="sr-only">(current)</span>{% endif %}</a>
+                            <button class="btn btn-secondary px-2 m-0 nav-item dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                {% for child in menu.get_children %}
+                                    <a class="dropdown-item" href="{{child.url}}">{{child.title}}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% else %}
+                        <a class="nav-item nav-link center py-2 px-2 {% if page.title == menu.title %} active{% endif %}" href="{{menu.url}}">{{menu.title}}
+                            {% if page.title == menu.title %} 
+                            <span class="sr-only">(current)</span>
+                            {% endif %}
+                        </a>
+                        {% endif %}
+                    {% if not forloop.last %} 
+                    <strong class="nav-item text-white my-auto d-none d-lg-block">&nbsp/&nbsp</strong> 
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</nav>
