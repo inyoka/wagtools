@@ -73,7 +73,7 @@ class SectionIndexPage(Page, Seo):
         validators=[MaxValueValidator(3), MinValueValidator(1)]
         )
 
-    my_stream = StreamField(CommonStreamBlock(), null=True, blank=True)
+    my_stream = StreamField(CommonStreamBlock(required=False), null=True, blank=True)
 
     def get_template(self, request):
         if self.alt_template == 1:
