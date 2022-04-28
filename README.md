@@ -38,7 +38,7 @@ Currently bootstrap is required for this App to render correctly. In the future 
 
 Inside your Wagtail installation use ...
 ```
-git clone https://github.com/chandra-kumala-school/wagtools.git
+git submodule add https://github.com/chandra-kumala-school/wagtools.git
 ```
 Add wagtools into **settings.py** in the INSTALLED_APPS section:
 
@@ -54,7 +54,7 @@ INSTALLED_APPS = [
 ```
 Run makemigrations and then migrate the database changes :
 ```
-./manage.py makemigrations
+./manage.py makemigrations wagtools
 ./manage.py migrate
 ./manage.py runserver
 ```
