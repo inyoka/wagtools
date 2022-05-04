@@ -133,7 +133,7 @@ dmypy.json
 
 # pytype static type analyzer
 .pytype/
-**/migrations/*
+# **/migrations/*
 templates/streams/notes.html
 *.scss
 nohup.out
