@@ -21,15 +21,6 @@ from wagtail.core.fields import (
     RichTextField, 
     StreamField
 )
-from wagtail.core.blocks import (
-    URLBlock, 
-    TextBlock, 
-    StructBlock, 
-    StreamBlock, 
-    CharBlock, 
-    RichTextBlock, 
-    BooleanBlock
-)
 from wagtail.contrib.forms.models import (
     AbstractEmailForm,
     AbstractFormField
@@ -41,8 +32,8 @@ from wagtail.admin.edit_handlers import (
 
 from wagtail.search import index
 
-from wagtools.snippet import Seo, Google, Facebook, SocialLinks, EditableFooter
-from wagtools.blocks import CommonStreamBlock
+from .snippet import Seo, Google, Facebook, SocialLinks, EditableFooter
+from .blocks import CommonStreamBlock
 
 
 class DefaultHomePage(Page, Seo):
