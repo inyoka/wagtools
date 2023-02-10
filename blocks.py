@@ -1,7 +1,7 @@
-from wagtail.admin.edit_handlers import (
+from wagtail.admin.panels import (
     FieldPanel,
 )
-from wagtail.core.blocks import (
+from wagtail.blocks import (
     URLBlock, 
     TextBlock, 
     ListBlock,
@@ -13,9 +13,7 @@ from wagtail.core.blocks import (
 )
 from wagtail.embeds.blocks import EmbedBlock
 from wagtail.images.blocks import ImageChooserBlock
-from wagtail.core.blocks.field_block import PageChooserBlock
-
-from wagtailcodeblock.blocks import CodeBlock
+from wagtail.blocks.field_block import PageChooserBlock
 
 
 class ColumnBlock(StreamBlock):
@@ -40,7 +38,6 @@ class ColumnTwoBlock(StructBlock):
 class ContentStreamBlock(StreamBlock):
     heading = TextBlock()
     paragraph = TextBlock()
-    code = CodeBlock(label='Code')
 
     class Meta:
         icon='code'

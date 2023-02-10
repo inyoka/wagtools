@@ -5,23 +5,20 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 from modelcluster.fields import ParentalKey
-from wagtail.core.models import Page, Orderable, Site
-from wagtail.admin.edit_handlers import (
+from wagtail.models import Page, Orderable, Site
+from wagtail.admin.panels import (
     FieldPanel,
     FieldRowPanel,
     InlinePanel,
     MultiFieldPanel,
-    StreamFieldPanel
-)
-from wagtail.images.edit_handlers import (
-    ImageChooserPanel
+    FieldPanel
 )
 
-from wagtail.core.fields import (
+from wagtail.fields import (
     RichTextField, 
     StreamField
 )
-from wagtail.core.blocks import (
+from wagtail.blocks import (
     URLBlock, 
     TextBlock, 
     StructBlock, 
@@ -30,13 +27,13 @@ from wagtail.core.blocks import (
     RichTextBlock, 
     BooleanBlock
 )
+
 from wagtail.contrib.forms.models import (
     AbstractEmailForm,
     AbstractFormField
 )
-from wagtail.admin.edit_handlers import (
-    FieldPanel, 
-    StreamFieldPanel
+from wagtail.admin.panels import (
+    FieldPanel
 )
 
 from wagtail.search import index
@@ -46,7 +43,7 @@ from wagtools.blocks import CommonStreamBlock
 
 
 class DefaultHomePage(Page, Seo):
-    my_stream = StreamField(CommonStreamBlock(required=False), null=True, blank=True)
+    my_stream = StreamField(CommonStreamBlock(required=False), null=True, blank=True, use_json_field=False)
 
     def get_context(self, request):
         context = super(DefaultHomePage, self).get_context(request)
@@ -59,7 +56,7 @@ class DefaultHomePage(Page, Seo):
     ]
 
     content_panels = Page.content_panels + [
-        StreamFieldPanel('my_stream', "Main content..."),
+        FieldPanel('my_stream', "Main content..."),
     ]
     promote_panels = Page.promote_panels + Seo.panels
 
@@ -73,7 +70,7 @@ class SectionIndexPage(Page, Seo):
         validators=[MaxValueValidator(3), MinValueValidator(1)]
         )
 
-    my_stream = StreamField(CommonStreamBlock(required=False), null=True, blank=True)
+    my_stream = StreamField(CommonStreamBlock(required=False), null=True, blank=True, use_json_field=False)
 
     def get_template(self, request):
         if self.alt_template == 1:
@@ -104,14 +101,14 @@ class SectionIndexPage(Page, Seo):
 
     content_panels = Page.content_panels + [
         FieldPanel('alt_template'),
-        StreamFieldPanel('my_stream')
+        FieldPanel('my_stream')
     ]
     promote_panels = Page.promote_panels + Seo.panels
 
 
 class SectionPage(Page, Seo):
     body = RichTextField(blank=True)
-    my_stream = StreamField(CommonStreamBlock(), null=True, blank=True,)
+    my_stream = StreamField(CommonStreamBlock(), null=True, blank=True, use_json_field=False)
 
     parent_page_types = ['wagtools.SectionIndexPage']
 
@@ -151,7 +148,7 @@ class SectionPage(Page, Seo):
 
     content_panels = Page.content_panels + [
         FieldPanel('body', classname="full"),
-        StreamFieldPanel('my_stream'),
+        FieldPanel('my_stream'),
         InlinePanel('gallery_images', label="Gallery images"),
     ]
     promote_panels = Page.promote_panels + Seo.panels
@@ -164,7 +161,7 @@ class SectionGalleryImage(Orderable):
     caption = models.CharField(blank=True, max_length=250)
 
     panels = [
-        ImageChooserPanel('image'),
+        FieldPanel('image'),
         FieldPanel('caption'),
     ]
 
@@ -176,8 +173,8 @@ class FormField(AbstractFormField):
     )
     
 class ContactPage(AbstractEmailForm, Seo):
-    my_stream = StreamField(CommonStreamBlock(), null=True, blank=True,)
-    thank_you = StreamField(CommonStreamBlock(), null=True, blank=True,)
+    my_stream = StreamField(CommonStreamBlock(), null=True, blank=True, use_json_field=False)
+    thank_you = StreamField(CommonStreamBlock(), null=True, blank=True, use_json_field=False)
     css_label = 'Add CSS (FontAwesome and Bootstrap classes) '
 
     button_css = models.CharField(max_length=300, 
@@ -197,7 +194,7 @@ class ContactPage(AbstractEmailForm, Seo):
         return context
 
     content_panels = AbstractEmailForm.content_panels + [
-        StreamFieldPanel('my_stream'),
+        FieldPanel('my_stream'),
         InlinePanel('form_fields', label='Form Fields'),
         MultiFieldPanel([
             FieldRowPanel([
@@ -205,7 +202,7 @@ class ContactPage(AbstractEmailForm, Seo):
                 FieldPanel('button_css', classname='col8'),
             ]),
         ], heading='Button Settings'),
-        StreamFieldPanel('thank_you'),
+        FieldPanel('thank_you'),
         MultiFieldPanel([
             FieldRowPanel([
                 FieldPanel('from_address', classname='col6'),

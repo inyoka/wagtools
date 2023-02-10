@@ -1,7 +1,7 @@
 from django.db import models
 
-from wagtail.images.edit_handlers import ImageChooserPanel
-from wagtail.admin.edit_handlers import (
+from wagtail.images.edit_handlers import FieldPanel
+from wagtail.admin.panels import (
     MultiFieldPanel,
     FieldPanel,
 )
@@ -23,7 +23,7 @@ class Seo(models.Model):
     panels = [
         MultiFieldPanel(
             [
-                ImageChooserPanel('seo_image'),
+                FieldPanel('seo_image'),
                 FieldPanel('google_ad_code'),
             ],
             heading="Additional SEO options ...",
