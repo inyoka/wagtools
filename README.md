@@ -1,3 +1,4 @@
+# WARNING : This tool is out of date.  However I am in the process of perhaps restarting development. Will post updates here. Thanks, Simon/Inyoka
 # Wagtools
 
 Wagtools is an app for Wagtail, a CMS built on Django and Python 3.  Wagtools helps you get Wagtail sites up and running really quickly by providing default pages with many Bootstrap elelments already available via streamfields.  Wagtail Streamfields allow you to choose which elements you would like to ue, and in what order.  The app also provides, social links fields, contact forms, blog / article sections and optional cookie acceptance.
