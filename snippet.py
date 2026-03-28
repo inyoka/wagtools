@@ -1,6 +1,5 @@
 from django.db import models
 
-from wagtail.images.edit_handlers import FieldPanel
 from wagtail.admin.panels import (
     MultiFieldPanel,
     FieldPanel,
