@@ -10,10 +10,10 @@ from wagtail.blocks import (
     StructBlock, 
     BooleanBlock,
     RichTextBlock, 
+    PageChooserBlock,
 )
 from wagtail.embeds.blocks import EmbedBlock
 from wagtail.images.blocks import ImageChooserBlock
-from wagtail.blocks.field_block import PageChooserBlock
 
 
 class ColumnBlock(StreamBlock):
